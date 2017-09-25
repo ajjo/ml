@@ -19,7 +19,7 @@ model.add(Dense(1, activation='sigmoid'))
 
 # Compile model
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-model.fit(X, Y, epochs=2, batch_size=100)
+model.fit(X, Y, epochs=100, batch_size=100)
 
 # Evaluate model
 scores = model.evaluate(X, Y)
@@ -30,4 +30,5 @@ model.summary()
 
 # Predict
 n = model.predict(X_test)
+n = n.round()
 print(n)
